@@ -1,49 +1,538 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html lang="en">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+    <title>App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Jquery Mobile-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="themes/Floristeria.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--Jquery api de Google-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<body>
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h1>Floristeria</h1>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+        <div data-role="main" class="ui-content">
+            <h1>Login</h1>
+            <form>
+                <label for="nombredeusuario">Usuario</label>
+                <input type="text" id="nombredeusuario" name="nombredeusuario" data-clear-btn="true">
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="clave" data-clear-btn="true">
+                <a href="#index" class="ui-btn ui-shadow">Entrar</a>
+            </form>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="" class="ui-btn ui-shadow" data-transition="flip"></a>
+                    </li>
+                    <li>
+                        <a href="" class="ui-btn ui-shadow" data-transition="flip"></a>
+                    </li>
+                    <li>
+                        <a href="" class="ui-btn ui-shadow" data-transition="flip"></a>
+                    </li>
+                </ul>
+            </div>
+
+            <h5>©Aplicacion de Danié</h5>
+        </div>
+    </div>
+    <div data-role="page" id="index">
+        <div data-role="header">
+            <a href="#login" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1>Floristeria</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div data-role="collapsibleset" data-inset="true">
+                <div data-role="collapsible">
+                    <h3>Perfil</h3>
+                    Nombre <input type="text"> Apellido <input type="text"> Direccion <input type="text"> Telefono
+                    <input
+                        type="text">
+                        Pedidos activos <textarea rows="5" cols="5"></textarea>
+                </div>
+            </div>
+            <div data-role="collapsibleset" data-inset="true">
+                <div data-role="collapsible">
+                    <h3>Ramos</h3>
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <tr>
+                            <th>
+                                <h3>Opciones</h3>
+                            </th>
+                            <th>
+                                <h3>Nombre</h3>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="rosas" /td>
+                                <td>
+                                    <h4>Rosas</h4>
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="claveles"></td>
+                            <td>
+                                <h4>Claveles</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="margaritas"></td>
+                            <td>
+                                <h4>Margaritas</h4>
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+            </div>
+            <div data-role="collapsibleset" data-inset="true">
+                <div data-role="collapsible">
+                    <h3>Accesorios</h3>
+                    <table data-role="table" data-mode="columntoggle" class="ui-responsive">
+                        <tr>
+                            <th>
+                                <h3>Opciones</h3>
+                            </th>
+                            <th>
+                                <h3>Nombre</h3>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="lazos" /td>
+                                <td>
+                                    <h4>Lazos</h4>
+                                </td>
+
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="Verdeo"></td>
+                            <td>
+                                <h4>Verdeo</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" value="flores"></td>
+                            <td>
+                                <h4>Flores Varias</h4>
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+            </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="" class="ui-btm ui-shadow ui-icon-info ui-btn-icon-left" data-transition="flip">Contactar</a></li>
+                        <li><a href="#paginauno" class="ui-btm ui-shadow ui-icon-grid ui-btn-icon-left" data-transition="flip">Pedidos</a></li>
+                        <li><a href="" class="ui-btm ui-shadow ui-icon-search ui-btn-icon-left " data-transition="flip">Web</a></li>
+                    </ul>
+                </div>
+
+                <h6>©Aplicacion de Danié</h6>
+            </div>
+
+        </div>
+         <div id="paginauno" data-role="page">
+        <div data-role="header">
+            <a href="#index" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3>Mensajes</h3>
+            <form class="form-vertical">
+
+
+                <div class="radio">
+                    <label for="mensaje1"><input type="radio"  id="m1"  name="mensaje1"  />Enhorabuena</label>
+                </div>
+                <div class="radio">
+                    <label for="mensaje2"><input type="radio"  id="m2" name="mensaje2" />Felicidades</label>
+                </div>
+                <div class="radio">
+                    <label for="mensaje3"><input type="radio"  id="m3" name="mensaje3" />Te deseo lo mejor</label>
+                </div>
+                <div class="radio ">
+                    <label for="mensaje4 "><input type="radio" id="m4" name="mensaje4" />Lo siento</label>
+                </div>
+
+
+                <div class="checkbox">
+
+                    <label for="txMensaje"><input type="checkbox" name="txMensaje" onclick="personalizado()" id="check1"  /><textarea id="tx" placeholder="Este mensaje solo puede tener 200 caracteres" size="200"></textarea>
+                        </label>
+                </div>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginados" class="ui-btm" data-transition="flip">Siguiente
+            
+                </a>
+            <a href="#index" class="ui-btm" data-transition="flip">
+                Inicio
+                </a>
+        </div>
+    </div>
+    <div data-role="page" id="paginados">
+        <div data-role="header">
+            <a href="#index" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main ">
+            <h3>Descripcion de Facturacion</h3>
+
+            <div class="descripcion">
+
+                <form>
+
+                    <label for="text">
+                        
+               
+                    Nombre <input type="text" id="nombre"  name="Nombre" />
+                    Apellidos <input type="text" id="apellidos" name="Apellidos" />
+					Domicilio <input type="text" id="domicilio"  name="Domicilio"/>
+                    Codigo Postal <input type="text" id="cpostal"  name="Codigo Postal" width="200" />
+                    
+                     
+                     
+                    Provincias <select  id="provincias">
+    					
+    					<option value="Almeria">Almeria</option>
+    					<option value="Barcelona">Barcelona</option>
+    					<option value="Cadiz">Cadiz</option>
+    					<option value="Cordoba">Cordoba</option>
+    					<option value="Granada">Granada</option>
+    					<option value="Huelva">Huelva</option>
+    					<option value="Jaen">Jaen</option>
+    					<option value="Madrid">Madrid</option>
+    					<option value="Malaga">Malaga</option>
+    					<option value="Sevilla">Sevilla</option>
+    					<option value="Malaga" selected="Malaga"></option>
+    				</select>
+                    Ciudad <input type="text" id="ciudad"  name="Ciudad" />
+                    Email <input type="text" id="email"  name="Email" />
+					Telefono <input type="text" id="telefono"  name="Telefono" />
+                    <label><input type="button" name="Guardar"  value="Guardar"></label>
+                    </label>
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+                Atras
+                </a>
+            <a href="#paginatres" class="ui-btm" data-transition="flip">
+                Siguiente
+                </a>
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+                Inicio
+                </a>
+        </div>
+    </div>
+    <div id="paginatres" data-role="page">
+        <div data-role="header">
+            <a href="#index" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main">
+
+            <h3>Direccion de Pago</h3>
+            <div class="cpago">
+
+                <form>
+
+                    <label for="text">
+                        
+               
+                    Nombre <input type="text" id="nombre"  name="Nombre" />
+                    Apellidos <input type="text" id="apellidos" name="Apellidos" />
+					Domicilio <input type="text" id="domicilio"  name="Domicilio"/>
+                    Codigo Postal <input type="text" id="cpostal"  name="Codigo Postal" width="200" />
+                    
+                     
+                     
+                    Provincias <select  id="provincias">
+    					
+    					<option value="Almeria">Almeria</option>
+    					<option value="Barcelona">Barcelona</option>
+    					<option value="Cadiz">Cadiz</option>
+    					<option value="Cordoba">Cordoba</option>
+    					<option value="Granada">Granada</option>
+    					<option value="Huelva">Huelva</option>
+    					<option value="Jaen">Jaen</option>
+    					<option value="Madrid">Madrid</option>
+    					<option value="Malaga">Malaga</option>
+    					<option value="Sevilla">Sevilla</option>
+    					<option value="Malaga" selected="Malaga"></option>
+    				</select>
+                    Ciudad <input type="text" id="ciudad"  name="Ciudad" />
+                    Email <input type="text" id="email"  name="Email" />
+					Telefono <input type="text" id="telefono"  name="Telefono" />
+                    
+                    <label><input type="button" name="Guardar"  value="Guardar"></label>
+                    </label>
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginados" class="ui-btm" data-transition="flip">
+            Atras
+                </a>
+            <a href="#paginacuatro" class="ui-btm" data-transition="flip">
+            Siguiente
+            </a>
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+            Inicio
+            </a>
+        </div>
+    </div>
+    <div id="paginacuatro" data-role="page">
+        <div data-role="header">
+            <a href="#index" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main">
+            <h3>Fecha de Envio</h3>
+
+
+            <form>
+
+                <label for="select">
+                <div class="dia">
+                    Dia <select id="diaEntrega" class="form-control">
+    					
+    					
+    					<option value="15" selected="15"></option>
+    				</select>
+                </div>
+                <div class="mes">
+                    Mes <select id="mesEntrega" onchange="actualizarDias();">
+    					
+    					<option value="1">1</option>
+    					<option value="2">2</option>
+    					<option value="3">3</option>
+    					<option value="4">4</option>
+    					<option value="5">5</option>
+    					<option value="6">6</option>
+						<option value="7">7</option>
+    					<option value="8">8</option>
+    					<option value="9">9</option>
+    					<option value="10">10</option>
+    					<option value="11">11</option>
+    					<option value="12">12</option>
+    					<option value="1" selected="1"></option>
+    				</select>
+                </div>
+                <div class="año">
+                    Año <select id="yearEntrega" onchange="actualizarDias();" >
+						 
+    					
+    					<option value="2017">2017</option>
+    					<option value="2018">2018</option>
+    					<option value="2019">2019</option>
+    					<option value="2020">2020</option>
+    					<option value="2021">2021</option>
+    					<option value="2022">2022</option>
+    					<option value="2023">2023</option>
+    					<option value="2024">2024</option>
+    					<option value="2025">2025</option>
+    					<option value="2026">2026</option>
+    					<option value="2018" selected="2018"></option>
+    				</select>
+                    <input type="button" name="Guardar" value="Guardar"></br>
+                </div>
+                
+                </label>
+
+            </form>
+
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginatres" class="ui-btm" data-transition="flip">
+            Atras
+                </a>
+            <a href="#paginacinco" class="ui-btm" data-transition="flip">
+            Siguiente
+            </a>
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+            Inicio
+            </a>
+        </div>
+    </div>
+    <div id="paginacinco" data-role="page">
+        <div data-role="header">
+            <a href="#index" class="ui-btn ui-shadow ui-icon-home ui-btn-icon-left "></a>
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h3>Formas de Pago</h3>
+
+
+            <form>
+
+
+                <div id="pago">
+
+                    <div class="radio">
+                        <label> Visa<input type="radio" id="visa" name="visa"  /></label>
+                    </div>
+                    <div class="radio">
+                        <label>Master<input type="radio" id="master" name="master" /></label>
+                    </div>
+                    <div class="radio">
+                        <label>American<input type="radio" name="american" /></label>
+                    </div>
+
+                </div>
+
+                <div>
+                    Numero de Cuenta <input type="text" name="Numero cuenta"> Fecha
+                    <select>
+    					<option value="1">1</option>
+    					<option value="2">2</option>
+    					<option value="3">3</option>
+    					<option value="4">4</option>
+    					<option value="5">5</option>
+    					<option value="6">6</option>
+						<option value="7">7</option>
+    					<option value="8">8</option>
+    					<option value="9">9</option>
+    					<option value="10">10</option>
+    					<option value="11">11</option>
+    					<option value="12">12</option>
+    					<option value="13">13</option>
+    					<option value="14">14</option>
+    					<option value="15">15</option>
+    					<option value="16">16</option>
+    					<option value="17">17</option>
+    					<option value="18">18</option>
+    					<option value="19">19</option>
+    					<option value="20">20</option>
+    					<option value="21">21</option>
+    					<option value="22">22</option>
+    					<option value="23">23</option>
+    					<option value="24">24</option>
+    					<option value="25">25</option>
+    					<option value="26">26</option>
+						<option value="27">27</option>
+    					<option value="28">28</option>
+    					<option value="29">29</option>
+    					<option value="30">30</option>
+						<option value="31">30</option>
+    					<option value="15" selected="15"></option>
+    				</select>
+                    <select>
+						<option value="17">17</option>
+    					<option value="18">18</option>
+    					<option value="19">19</option>
+    					<option value="20">20</option>
+    					<option value="21">21</option>
+    					<option value="22">22</option>
+    					<option value="23">23</option>
+    					<option value="24">24</option>
+    					<option value="25">25</option>
+    					<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="18" selected="18"></option>
+					</select> Codigo CVV <input type="text" name="Codigo CVV" maxlength="3" size="3">
+
+                </div>
+
+
+
+
+            </form>
+
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginacuatro" class="ui-btm" data-transition="flip">
+            Atras
+            <a href="#paginaseis" class="ui-btm" data-transition="flip">
+            Siguiente
+            </a>
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+            Inicio
+            </a>
+        </div>
+    </div>
+    <div id="paginaseis" data-role="page">
+        <div data-role="header">
+            <h1> Floristeria</h1>
+        </div>
+        <div data-role="main">
+            <h3>Registro</h3>
+
+
+            <form>
+                <div>
+
+                    Usuario <input type="text" name="Usuario"> Contraseña <input type="password" name="Contraseña"> Repetir
+                    Contraseña <input type="password" name="Contraseña2">
+                    </br>
+                    <input type="button" name="Login" value="Enviar pedido">
+
+                </div>
+            </form>
+
+
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h5>©Aplicacion de Danié</h5>
+            <a href="#paginaseis" class="ui-btm" data-transition="flip">
+            Atras
+            <a href="#paginauno" class="ui-btm" data-transition="flip">
+            Inicio
+            </a>
+        </div>
+    </div>
+            
+
+        </body>
+
 </html>
